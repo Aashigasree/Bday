@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🎉 Happy Birthday, Kiruki 🎉</h1>
+    <p class="message">Wishing you an amazing year filled with love, joy, and all your dreams coming true! 💖</p>
+
+    <button onclick="showSurprise()">Click for a Surprise!</button>
+
+    <p id="surprise-text" style="display: none;">🎂 You’re the sweetest person I know! Love ya! 🎂</p>
+    <br>
+    <br>
+    
+    <div class="cake" id="cake" style="display: none;">
+      <div class="candles">
+      <div class="candle "><div class="flame"></div></div>
+         
+      </div>
+        <div class="layers11"></div>
+        <div class="layers2"></div>
+        <div class="layers1"></div>
+        <div class="layers2"></div>
+        <div class="layers1"></div>
+        <br>
+      <button id="blowButton" onclick="blowCandles()" style="display: none;">Blow Candles!</button>
+      <a href="pic.html">Want to see Photo gallery</a>
+
+    </div>
+  </div>
+  
+
+  <!-- Confetti Script -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    function showSurprise() {
+      document.getElementById("surprise-text").style.display = "block";
+      document.getElementById("cake").style.display = "block";
+      document.getElementById("blowButton").style.display = "inline-block";
+
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }
+
+    function blowCandles() {
+      const flames = document.querySelectorAll(".flame");
+      flames.forEach(flame => flame.style.display = "none");
+    }
+  </script>
+
+</body>
+
+</html>
